@@ -1,0 +1,26 @@
+use crate::solver_interface::ir::*;
+use std::str::FromStr;
+
+grammar;
+
+pub Constraint: Constraint = {
+    <lhe: Xtype> "=" <rhe: Xtype> => Constraint {lhe, rhe},
+};
+
+pub Xtype: Xtype = {
+    Xtype1,
+};
+
+Xtype1: Xtype = {
+   <lhe: Xtype0> "->" <rhe: Xtype1> => Xtype::Function(FunctionData {from: Box::new(lhe), to: Box::new(rhe)}),
+   Xtype0
+};
+
+Xtype0: Xtype = {
+    ConstantID => Xtype::Constant(ConstantData { name: <> }),
+    VarID => Xtype::Var(VarData { name: <> }),
+};
+
+VarID: VarID = "V" "(" <id: ID> ")" => VarID(id);
+ConstantID: ConstantID = "C" "(" <id: ID> ")" => ConstantID(id);
+ID: usize = <s:r"[0-9]+"> => usize::from_str(s).unwrap();

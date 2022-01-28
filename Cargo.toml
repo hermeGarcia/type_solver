@@ -1,0 +1,20 @@
+[package]
+name = "type_solver"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their solver_interface at https://doc.rust-lang.org/cargo/reference/manifest.html
+[build-dependencies]
+lalrpop = "0.19.6"
+
+
+[dependencies]
+symbol_table = {path = "../symbol_table"}
+lalrpop-util = "0.19.6"
+regex = "1"
+lazy_static = "1.4.0"
+
+
+[[bin]]
+name = "type_solver"
+path = "src/type_solver.rs"

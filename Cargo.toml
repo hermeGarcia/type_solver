@@ -9,7 +9,6 @@ lalrpop = "0.19.6"
 
 
 [dependencies]
-symbol_table = {path = "../symbol_table"}
 lalrpop-util = "0.19.6"
 regex = "1"
 lazy_static = "1.4.0"

@@ -29,7 +29,7 @@ pub fn apply_operation(
         Operation::Replace(op) => {
             let mut new_constraints = ConstraintList::new();
             let mut effective = false;
-            for Constraint {lhe, rhe} in constraints {
+            for Constraint { lhe, rhe } in constraints {
                 let (lhe, effective_l) = apply_replace(lhe, &op);
                 let (rhe, effective_r) = apply_replace(rhe, &op);
                 effective = effective || effective_l || effective_r;

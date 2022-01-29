@@ -7,7 +7,6 @@ pub trait Parse: Sized {
     fn parse(data: &str) -> Result<Self, ParseErr>;
 }
 
-
 pub struct ParseErr(String);
 
 impl From<String> for ParseErr {
@@ -30,7 +29,6 @@ impl Debug for ParseErr {
 
 pub type ConstraintList = std::collections::LinkedList<Constraint>;
 
-
 #[derive(Clone)]
 pub struct Constraint {
     pub(crate) lhe: Xtype,
@@ -45,7 +43,7 @@ impl std::fmt::Display for Constraint {
     }
 }
 
-impl From<&str> for Constraint  {
+impl From<&str> for Constraint {
     fn from(data: &str) -> Self {
         parser::ConstraintParser::new().parse(data).unwrap()
     }
@@ -53,9 +51,7 @@ impl From<&str> for Constraint  {
 
 impl Parse for Constraint {
     fn parse(data: &str) -> Result<Self, ParseErr> {
-        parser::ConstraintParser::new()
-            .parse(data)
-            .map_err(|x| ParseErr::from(x.to_string()))
+        parser::ConstraintParser::new().parse(data).map_err(|x| ParseErr::from(x.to_string()))
     }
 }
 
@@ -70,7 +66,6 @@ impl From<Constraint> for (Xtype, Xtype) {
         (c.lhe, c.rhe)
     }
 }
-
 
 #[derive(Clone)]
 pub enum Xtype {

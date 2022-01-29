@@ -1,4 +1,3 @@
-
 // auto-generated: "lalrpop 0.19.6"
 // sha3: 1be042edb93b7e648ac15bbf226fd7ab145545d1bc186ab8035f24f2c30c9ee
 use crate::solver_interface::ir::*;
@@ -1279,147 +1278,108 @@ mod __intern_token {
 pub(crate) use self::__lalrpop_util::lexer::Token;
 
 #[allow(unused_variables)]
-fn __action0<
-    'input,
->(
-    input: &'input str,
-    (_, __0, _): (usize, Constraint, usize),
-) -> Constraint
-{
+fn __action0<'input>(input: &'input str, (_, __0, _): (usize, Constraint, usize)) -> Constraint {
     __0
 }
 
 #[allow(unused_variables)]
-fn __action1<
-    'input,
->(
-    input: &'input str,
-    (_, __0, _): (usize, Xtype, usize),
-) -> Xtype
-{
+fn __action1<'input>(input: &'input str, (_, __0, _): (usize, Xtype, usize)) -> Xtype {
     __0
 }
 
 #[allow(unused_variables)]
-fn __action2<
-    'input,
->(
+fn __action2<'input>(
     input: &'input str,
     (_, lhe, _): (usize, Xtype, usize),
     (_, _, _): (usize, &'input str, usize),
     (_, rhe, _): (usize, Xtype, usize),
-) -> Constraint
-{
-    Constraint {lhe, rhe}
+) -> Constraint {
+    Constraint { lhe, rhe }
 }
 
 #[allow(unused_variables)]
-fn __action3<
-    'input,
->(
-    input: &'input str,
-    (_, __0, _): (usize, Xtype, usize),
-) -> Xtype
-{
+fn __action3<'input>(input: &'input str, (_, __0, _): (usize, Xtype, usize)) -> Xtype {
     __0
 }
 
 #[allow(unused_variables)]
-fn __action4<
-    'input,
->(
+fn __action4<'input>(
     input: &'input str,
     (_, lhe, _): (usize, Xtype, usize),
     (_, _, _): (usize, &'input str, usize),
     (_, rhe, _): (usize, Xtype, usize),
-) -> Xtype
-{
-    Xtype::Function(FunctionData {from: Box::new(lhe), to: Box::new(rhe)})
+) -> Xtype {
+    Xtype::Function(FunctionData { from: Box::new(lhe), to: Box::new(rhe) })
 }
 
 #[allow(unused_variables)]
-fn __action5<
-    'input,
->(
-    input: &'input str,
-    (_, __0, _): (usize, Xtype, usize),
-) -> Xtype
-{
+fn __action5<'input>(input: &'input str, (_, __0, _): (usize, Xtype, usize)) -> Xtype {
     __0
 }
 
 #[allow(unused_variables)]
-fn __action6<
-    'input,
->(
-    input: &'input str,
-    (_, __0, _): (usize, ConstantID, usize),
-) -> Xtype
-{
+fn __action6<'input>(input: &'input str, (_, __0, _): (usize, ConstantID, usize)) -> Xtype {
     Xtype::Constant(ConstantData { name: __0 })
 }
 
 #[allow(unused_variables)]
-fn __action7<
-    'input,
->(
-    input: &'input str,
-    (_, __0, _): (usize, VarID, usize),
-) -> Xtype
-{
+fn __action7<'input>(input: &'input str, (_, __0, _): (usize, VarID, usize)) -> Xtype {
     Xtype::Var(VarData { name: __0 })
 }
 
 #[allow(unused_variables)]
-fn __action8<
-    'input,
->(
+fn __action8<'input>(
     input: &'input str,
     (_, _, _): (usize, &'input str, usize),
     (_, _, _): (usize, &'input str, usize),
     (_, id, _): (usize, usize, usize),
     (_, _, _): (usize, &'input str, usize),
-) -> VarID
-{
+) -> VarID {
     VarID(id)
 }
 
 #[allow(unused_variables)]
-fn __action9<
-    'input,
->(
+fn __action9<'input>(
     input: &'input str,
     (_, _, _): (usize, &'input str, usize),
     (_, _, _): (usize, &'input str, usize),
     (_, id, _): (usize, usize, usize),
     (_, _, _): (usize, &'input str, usize),
-) -> ConstantID
-{
+) -> ConstantID {
     ConstantID(id)
 }
 
 #[allow(unused_variables)]
-fn __action10<
-    'input,
->(
-    input: &'input str,
-    (_, s, _): (usize, &'input str, usize),
-) -> usize
-{
+fn __action10<'input>(input: &'input str, (_, s, _): (usize, &'input str, usize)) -> usize {
     usize::from_str(s).unwrap()
 }
 
-pub trait __ToTriple<'input, > {
-    fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>;
+pub trait __ToTriple<'input> {
+    fn to_triple(
+        value: Self,
+    ) -> Result<
+        (usize, Token<'input>, usize),
+        __lalrpop_util::ParseError<usize, Token<'input>, &'static str>,
+    >;
 }
 
-impl<'input, > __ToTriple<'input, > for (usize, Token<'input>, usize) {
-    fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>> {
+impl<'input> __ToTriple<'input> for (usize, Token<'input>, usize) {
+    fn to_triple(
+        value: Self,
+    ) -> Result<
+        (usize, Token<'input>, usize),
+        __lalrpop_util::ParseError<usize, Token<'input>, &'static str>,
+    > {
         Ok(value)
     }
 }
-impl<'input, > __ToTriple<'input, > for Result<(usize, Token<'input>, usize), &'static str> {
-    fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>> {
+impl<'input> __ToTriple<'input> for Result<(usize, Token<'input>, usize), &'static str> {
+    fn to_triple(
+        value: Self,
+    ) -> Result<
+        (usize, Token<'input>, usize),
+        __lalrpop_util::ParseError<usize, Token<'input>, &'static str>,
+    > {
         match value {
             Ok(v) => Ok(v),
             Err(error) => Err(__lalrpop_util::ParseError::User { error }),

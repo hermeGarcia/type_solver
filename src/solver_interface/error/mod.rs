@@ -1,7 +1,6 @@
 use super::ir::Xtype;
 use std::fmt::Formatter;
 
-
 pub enum TyError {
     Clash(ClashErr),
     Occurs(OccursErr),
@@ -16,7 +15,6 @@ pub struct OccursErr {
     pub rhe: Xtype,
     pub lhe: Xtype,
 }
-
 
 impl std::error::Error for TyError {}
 

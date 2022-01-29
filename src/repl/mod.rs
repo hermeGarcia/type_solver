@@ -13,7 +13,7 @@ enum RPLCommand {
 }
 
 impl RPLCommand {
-    pub fn parse(mut msg: String) ->  Result<RPLCommand, ExecError> {
+    pub fn parse(mut msg: String) -> Result<RPLCommand, ExecError> {
         use lazy_static::lazy_static;
         use regex::*;
         lazy_static! {
@@ -105,7 +105,6 @@ fn remove(state: &mut BlackBoard, index: &String) -> Result<(), ExecError> {
     Ok(())
 }
 
-
 pub fn repl() {
     let mut output = std::io::stdout();
     let input = std::io::stdin();
@@ -128,7 +127,7 @@ pub fn repl() {
             Err(e) => Err(e),
         };
         match result {
-            Ok(_) => {},
+            Ok(_) => {}
             Err(e) => match e {
                 ExecError::FileNotFound => {
                     output.write_all(b"[ERR] File not found\n").unwrap();

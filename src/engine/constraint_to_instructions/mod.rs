@@ -11,21 +11,33 @@ fn rule_var(var: VarData, t: Xtype) -> OperationList {
             lhe: Xtype::Var(var.clone()),
             rhe: t.clone(),
         }));
-        operations.push_back(Operation::Add(AddOp { is_new: false, elem: Constraint::from((Xtype::Var(var), t)) }));
+        operations.push_back(Operation::Add(AddOp {
+            is_new: false,
+            elem: Constraint::from((Xtype::Var(var), t)),
+        }));
     }
     operations
 }
 
 fn rule_decompose(lf: FunctionData, rf: FunctionData) -> OperationList {
     let mut operations = OperationList::new();
-    operations.push_back(Operation::Add(AddOp { is_new: true, elem: Constraint::from((*lf.to, *rf.to)) }));
-    operations.push_back(Operation::Add(AddOp { is_new: true, elem: Constraint::from((*lf.from, *rf.from)) }));
+    operations.push_back(Operation::Add(AddOp {
+        is_new: true,
+        elem: Constraint::from((*lf.to, *rf.to)),
+    }));
+    operations.push_back(Operation::Add(AddOp {
+        is_new: true,
+        elem: Constraint::from((*lf.from, *rf.from)),
+    }));
     operations
 }
 
 fn rule_sym(t: Xtype, var: VarData) -> OperationList {
     let mut operations = OperationList::new();
-    operations.push_back(Operation::Add(AddOp { is_new: true, elem: Constraint::from((Xtype::Var(var), t)) }));
+    operations.push_back(Operation::Add(AddOp {
+        is_new: true,
+        elem: Constraint::from((Xtype::Var(var), t)),
+    }));
     operations
 }
 

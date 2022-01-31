@@ -93,7 +93,7 @@ When given to the engine, the solution being returned is:
 ```
 
 ## Future work
-This project is miles away of being a production and, to be honest, I don't think that is my goal.
+This project is miles away of being production ready and, to be honest, I don't think that is my goal.
 As of now I want this project to be an easy-to-use type inference engine where adding modifications does not require lots of knowledge.<br />
 In future iterations I will focus on simplifying the process of writing constraints through the API.
 ## Authors
